@@ -22,3 +22,18 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+now = datetime.now()
+month = now.month
+year = now.year
+
+def print_calendar(month=month, year=year):
+  print(calendar.month(year, month))
+
+def print_usage():
+  print("calendar.py month [year]")
+
+if (sys.argv.__len__() > 3):
+  print_usage()
+else:
+  print_calendar(*list(map(int, sys.argv[1:])))
